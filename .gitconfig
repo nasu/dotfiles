@@ -1,0 +1,19 @@
+[alias]
+	st = status
+	ci = commit
+	co = checkout
+	di = diff
+    co = checkout
+    br = branch
+    graph = log --graph --date-order -C -M --pretty=format:\"<%h> %ad %Cgreen%d%Creset %s\" --all --date=short
+[color]
+	branch      = always
+	diff        = always
+	interactive = always
+	status      = always
+
+[user]
+	name = nasu
+	email = tatu.nasu@gmail.com
+[push]
+	default = simple
