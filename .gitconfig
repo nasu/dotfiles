@@ -1,19 +1,24 @@
 [alias]
-	st = status
-	ci = commit
-	co = checkout
-	di = diff
+    st = status
+    ci = commit
+    co = checkout
+    di = diff
     co = checkout
     br = branch
+    sm = submodule
     graph = log --graph --date-order -C -M --pretty=format:\"<%h> %ad %Cgreen%d%Creset %s\" --all --date=short
+    g = log --graph -C -M --pretty=format:\"<%h> %ai %an %Cgreen%d%Creset%s\" --all
 [color]
-	branch      = always
-	diff        = always
-	interactive = always
-	status      = always
-
+    branch      = always
+    diff        = true
+    interactive = always
+    status      = true
 [user]
-	name = nasu
-	email = tatu.nasu@gmail.com
+    name = nasu
+    email = tatu.nasu@gmail.com
 [push]
-	default = simple
+    default = simple
+[branch]
+    autosetuprebase=always
+[http]
+    postBuffer = 524288000
