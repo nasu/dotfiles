@@ -1,0 +1,31 @@
+# use the powerline patched font variant of the theme
+tmux_conf_theme=powerline_patched_font
+
+# use 5 hearts for the battery status
+#tmux_conf_battery_symbol=heart
+#tmux_conf_battery_symbol_count=10
+
+# or alternatively use an external tool, e.g. https://github.com/Goles/Battery
+#tmux_conf_battery='#(battery -t) '
+
+# if you're running tmux within iTerm2
+#   - and tmux is 1.9 or 1.9a
+#   - and iTerm2 is configured to let option key act as +Esc
+#   - and iTerm2 is configured to send [1;9A -> [1;9D for option + arrow keys
+# then uncomment the following line to make Meta + arrow keys mapping work
+#set -g terminal-overrides "*:kUP3=\e[1;9A,*:kDN3=\e[1;9B,*:kRIT3=\e[1;9C,*:kLFT3=\e[1;9D"
+setw -g mouse off
+
+#set-window-option -g window-status-format "#I#{pane_current_path}"
+#set-window-option -g window-status-current-format "#I#{pane_current_path}"
+bind-key c new-window -c "#{pane_current_path}"
+
+set -g @plugin 'tmux-plugins/tpm'
+set -g @plugin 'tmux-plugins/tmux-sensible'
+set -g @plugin 'tmux-plugins/tmux-resurrect'
+set -g @plugin 'tmux-plugins/tmux-continuum'
+set -g @continuum-restore 'on'
+run-shell '~/.tmux/plugins/tpm/tpm'
+run-shell '~/.tmux/plugins/tmux-sensible/sensible.tmux'
+run-shell '~/.tmux/plugins/tmux-resurrect/resurrect.tmux'
+run-shell '~/.tmux/plugins/tmux-continuum/continuum.tmux'
