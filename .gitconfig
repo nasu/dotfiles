@@ -8,6 +8,7 @@
     sm = submodule
     graph = log --graph --date-order -C -M --pretty=format:\"<%h> %ad %Cgreen%d%Creset %s\" --all --date=short
     g = log --graph -C -M --pretty=format:\"<%h> %ai %an %Cgreen%d%Creset%s\" --all
+    brc = rev-parse --abbrev-ref HEAD
 [color]
     branch      = always
     diff        = true
