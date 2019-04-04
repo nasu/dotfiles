@@ -1,19 +1,22 @@
 syntax on
 colorscheme default
 set nobk
+set noundofile
 set ai
 set tabstop=4
 set shiftwidth=4
 set expandtab
-set cursorline
-augroup cch
-  autocmd! cch
-  autocmd WinLeave * set nocursorline
-  autocmd WinEnter,BufRead * set cursorline
+set nocursorline
+set background=light
+set mouse=
+"augroup cch
+"  autocmd! cch
+"  autocmd WinLeave * set nocursorline
+"  "autocmd WinEnter,BufRead * set cursorline
 augroup END
-hi clear CursorLine
-hi CursorLine gui=underline
-hi CursorLine ctermbg=red guibg=red
+"hi clear CursorLine
+"hi CursorLine gui=underline
+"hi CursorLine ctermbg=red guibg=red
 
 nmap <ESC><ESC> :noh<CR><ESC>
 filetype plugin on
@@ -47,10 +50,10 @@ endif
 
 " Switch syntax highlighting on, when the terminal has colors
 " Also switch on highlighting the last used search pattern.
-if &t_Co > 2 || has("gui_running")
-  syntax on
-  set hlsearch
-endif
+"if &t_Co > 2 || has("gui_running")
+"  syntax on
+"  set hlsearch
+"endif
 "colorscheme default2
 
 if &term=="xterm"
@@ -96,6 +99,7 @@ set smarttab
 """ golang
 " :Fmt などで gofmt の代わりに goimports を使う
 let g:gofmt_command = 'goimports'
+let g:go_def_mapping_enabled = 1
 "
 " " Go に付属の plugin と gocode を有効にする
 set rtp^=${GOROOT}/misc/vim
@@ -111,6 +115,7 @@ function! s:remove_dust()
     call setpos(".", cursor)
     unlet cursor
 endfunction
+let g:go_fmt_command = 'goreturns'
 au BufWritePre *.go Fmt
 autocmd BufWritePre * call <SID>remove_dust()
 
@@ -129,10 +134,14 @@ if has('vim_starting')
 endif
 NeoBundleFetch 'Shougo/neobundle.vim'
 NeoBundle 'alpaca-tc/alpaca_powertabline'
-NeoBundle 'https://github.com/Lokaltog/powerline.git'
-NeoBundle 'https://github.com/Lokaltog/powerline-fontpatcher'
+NeoBundle 'Lokaltog/powerline'
+NeoBundle 'Lokaltog/powerline-fontpatcher'
+NeoBundle 'fatih/vim-go'
+NeoBundle 'vim-scripts/Zenburn'
+NeoBundle 'tomlion/vim-solidity'
 if has('vim_starting')
   call neobundle#end()
 endif
+colorscheme zenburn
 
 filetype plugin indent on

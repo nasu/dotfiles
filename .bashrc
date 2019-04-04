@@ -44,3 +44,5 @@ export DOCKER_CERT_PATH=/Users/nasu/.boot2docker/certs/boot2docker-vm
 export DOCKER_TLS_VERIFY=1
 source $HOME/.docker/bashrc-completion
 complete -F _docker d
+
+source ~/git/dotfiles/.bashrc.mirrativ.local
