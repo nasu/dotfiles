@@ -1,0 +1,23 @@
+[[plugins]]
+repo = 'alpaca-tc/alpaca_powertabline'
+[[plugins]]
+repo = 'https://github.com/Lokaltog/powerline.git'
+#[[plugins]]
+#repo = 'https://github.com/kchmck/vim-coffee-script.git'
+[[plugins]]
+repo = 'fatih/vim-go'
+#[[plugins]]
+#repo = 'burnettk/vim-angular'
+#[[plugins]]
+#repo = 'seratch/vim-angular-coffee'
+[[plugins]]
+repo = 'pangloss/vim-javascript'
+#[[plugins]]
+#repo = 'mxw/vim-jsx'
+[[plugins]]
+repo = 'kien/ctrlp.vim'
+[[plugins]]
+repo = 'https://github.com/NLKNguyen/papercolor-theme'
+[[plugins]]
+repo = 'https://github.com/morhetz/gruvbox'
+
