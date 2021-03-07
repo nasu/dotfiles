@@ -1,0 +1,24 @@
+{
+    "terminal.integrated.copyOnSelection": true,
+    "editor.fontFamily": "Hack-Regular",
+    "editor.fontSize": 10,
+    "editor.tabSize": 2,
+    "editor.insertSpaces": true,
+    "terminal.integrated.fontFamily": "monospace",
+    "yaml.schemas": {
+        "https://raw.githubusercontent.com/kogosoftwarellc/open-api/master/packages/openapi-schema-validator/resources/openapi-3.0.json": ["*swagger.yaml", "*swagger.yml"],
+    },
+    "go.useLanguageServer": true,
+    "go.toolsEnvVars": {
+        "GO111MODULE": "on",
+    },
+    "go.formatTool": "goimports",
+    "[go]": {
+        "editor.formatOnSave": true,
+        "editor.codeActionsOnSave": {
+            "source.organizeImports": true,
+        }
+    },
+    "terminal.integrated.rendererType": "dom",
+    "todohighlight.isEnable": true
+}
