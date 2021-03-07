@@ -21,6 +21,19 @@ hi clear CursorLine
 hi CursorLine gui=underline
 hi CursorLine ctermbg=red guibg=red
 
+set foldmethod=syntax
+set foldnestmax=1
+map <Space>a za
+map <Space>c zc
+map <Space>o zo
+map <Space>m zm
+map <Space>r zR
+"hi Normal ctermfg= ctermbg=NONE
+hi Folded ctermfg=DarkGreen
+hi Comment ctermfg=LightGreen ctermbg=NONE
+syn keyword Todo WIP
+syn keyword goTodo WIP
+
 nmap <ESC><ESC> :noh<CR><ESC>
 cmap <expr> %%% expand("<cword>")
 xmap ga <Plug>(EasyAlign)
@@ -29,13 +42,10 @@ filetype plugin on
 autocmd BufNewFile,BufRead *.pm   set filetype=perl
 autocmd BufNewFile,BufRead *.psgi set filetype=perl
 autocmd BufNewFile,BufRead *.t    set filetype=perl
-autocmd BufNewFile,BufRead *.js  set filetype=javascript
-autocmd BufNewFile,BufRead *.jsx  set filetype=javascript
 autocmd BufNewFile,BufRead *.coffee set filetype=coffee
 autocmd BufNewFile,BufRead *.hbs  set filetype=handlebars
 autocmd FileType perl :set tabstop=4 shiftwidth=4 expandtab
 autocmd FileType perl :compiler perl
-autocmd FileType javascript :compiler javascript
 "autocmd FileType perl :set  encoding=euc-jp
 "autocmd FileType html :set  encoding=sjis
 "autocmd FileType sql  :set  encoding=sjis
@@ -137,7 +147,7 @@ set rtp^=${GOROOT}/misc/vim
 set rtp^=${GOPATH}/src/github.com/nsf/gocode/vim
 
 " 保存時に :Fmt する
-au BufWritePre *.go Fmt
+au BufWritePre *.go GoFmt
 au BufNewFile,BufRead *.go set sw=4 noexpandtab ts=4
 au FileType go compiler go
 "function! s:remove_dust()
@@ -208,3 +218,9 @@ endif
 
 filetype plugin indent on
 colorscheme PaperColor
+highlight Normal ctermbg=none
+highlight NonText ctermbg=none
+highlight LineNr ctermbg=none
+highlight Folded ctermbg=none
+highlight EndOfBuffer ctermbg=none 
+

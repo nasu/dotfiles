@@ -11,7 +11,8 @@ repo = 'fatih/vim-go'
 #[[plugins]]
 #repo = 'seratch/vim-angular-coffee'
 [[plugins]]
-repo = 'pangloss/vim-javascript'
+#repo = 'pangloss/vim-javascript'
+repo = 'jelera/vim-javascript-syntax'
 #[[plugins]]
 #repo = 'mxw/vim-jsx'
 [[plugins]]

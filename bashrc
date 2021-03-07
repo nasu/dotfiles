@@ -19,6 +19,7 @@ alias d='docker'
 alias drmif='docker rmi -f `docker images -a -q`'
 alias drmf='docker rm -f `docker ps -a -q`'
 alias openvs='open -a /Applications/Visual\ Studio\ Code.app/'
+alias k=kubectl
 if [[ -x `which colordiff` ]]; then
   alias diff='colordiff'
 fi
@@ -28,6 +29,9 @@ eval "$(hub alias -s)"
 PATH=""
 dir=(
 "~/bin"
+"~/flutter/bin"
+"~/google-cloud-sdk/bin"
+"~/Library/Android/sdk/platform-tools/"
 "/usr/local/opt/openssl/bin"
 "/usr/local/bin"
 "/usr/bin"
@@ -55,4 +59,12 @@ export LDFLAGS="-L/usr/local/opt/openssl/lib"
 export CPPFLAGS="-I/usr/local/opt/openssl/include"
 
 eval "$(anyenv init -)"
+eval "$(direnv hook bash)"
+eval "$(pyenv init -)"
+eval "$(goenv init -)"
+eval "$(nodenv init -)"
+eval "$(kubectl completion bash)"
+complete -C 'aws_completer' aws
+complete -o default -F __start_kubectl k
+eval "$(eksctl completion bash))"
 ssh-add
