@@ -17,5 +17,19 @@
     {
         "key": "cmd+1",
         "command": "-workbench.action.focusFirstEditorGroup"
+    },
+    {
+        "key": "alt+cmd+right",
+        "command": "workbench.action.terminal.focusNext"
+    },
+    {
+        "key": "ctrl+j right",
+        "command": "workbench.action.terminal.focusNextPane",
+        "when": "terminalFocus && terminalProcessSupported"
+    },
+    {
+        "key": "alt+cmd+right",
+        "command": "-workbench.action.terminal.focusNextPane",
+        "when": "terminalFocus && terminalProcessSupported"
     }
 ]

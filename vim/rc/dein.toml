@@ -21,4 +21,5 @@ repo = 'kien/ctrlp.vim'
 repo = 'https://github.com/NLKNguyen/papercolor-theme'
 [[plugins]]
 repo = 'https://github.com/morhetz/gruvbox'
-
+[[plugins]]
+repo = 'https://github.com/gutenye/json5.vim'

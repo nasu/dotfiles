@@ -20,6 +20,7 @@ alias drmif='docker rmi -f `docker images -a -q`'
 alias drmf='docker rm -f `docker ps -a -q`'
 alias openvs='open -a /Applications/Visual\ Studio\ Code.app/'
 alias k=kubectl
+alias d=docker
 if [[ -x `which colordiff` ]]; then
   alias diff='colordiff'
 fi
@@ -57,12 +58,14 @@ eval $(docker-machine env -u)
 
 export LDFLAGS="-L/usr/local/opt/openssl/lib"
 export CPPFLAGS="-I/usr/local/opt/openssl/include"
+export POWERLINE_CONFIG_COMMAND=tmux setup
 
 eval "$(anyenv init -)"
 eval "$(direnv hook bash)"
 eval "$(pyenv init -)"
 eval "$(goenv init -)"
 eval "$(nodenv init -)"
+eval "$(rbenv init -)"
 eval "$(kubectl completion bash)"
 complete -C 'aws_completer' aws
 complete -o default -F __start_kubectl k
